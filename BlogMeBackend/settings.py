@@ -25,9 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x%$&gkw34@tyhgnceoeoch*-!@*iqsn-citxt0rr6d%8_be_qr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
+    'http://127.0.0.1:8000/',
     '.herokuapp.com'
 ]
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework', 
     'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 # REST_FRAMEWORK = {
@@ -57,6 +59,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
      'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -89,10 +92,14 @@ WSGI_APPLICATION = 'BlogMeBackend.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'd505c0c4o9e5j4',
+       'USER': 'zqgrqcsvuevhfe',
+       'PASSWORD': 'a5448c60d6bcf8d2a8a2c660ad78f17de0b7a66b8f0c29f8ff2ae8a5383c7db4',
+       'HOST': 'ec2-44-194-113-156.compute-1.amazonaws.com',
+       'PORT': '5432',
+   }
 }
 
 
@@ -112,6 +119,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3001',
 ]
 
 
