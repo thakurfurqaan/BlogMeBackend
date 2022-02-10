@@ -123,10 +123,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3001',
+    '.netlify.app'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3001',
+    '.netlify.app'
 ]
 
 
