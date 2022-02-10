@@ -123,12 +123,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3001',
-    'https://6205190a56f7ec0007e363a6--dreamy-saha-b639d3.netlify.app',
+    'https://dreamy-saha-b639d3.netlify.app/',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3001',
-    'https://6205190a56f7ec0007e363a6--dreamy-saha-b639d3.netlify.app',
+    'https://dreamy-saha-b639d3.netlify.app/',
 ]
 
 
