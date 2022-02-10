@@ -1,14 +1,21 @@
 from rest_framework import serializers
-from .models import Article
+from .models import Post
 from django.contrib.auth.models import User
 from rest_framework.authtoken.views import Token
 
 
-class ArticleSerializer(serializers.ModelSerializer):
+# class ArticleSerializer(serializers.ModelSerializer):
+#     # _id = serializers.IntegerField(source='id')
+#     # renamed_name = serializers.CharField(source='')
 
+#     class Meta:
+#         model = Article
+#         fields = ["userId","id","title", "body"]
+
+class PostSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Article
-        fields = ["id","title", "description"]
+        model = Post
+        fields = ["userId","id","title", "body"]
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
